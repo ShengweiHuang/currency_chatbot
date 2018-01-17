@@ -3,6 +3,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import os
+import currency as curr
 
 app = Flask(__name__)
 
@@ -26,7 +27,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-	content = event.message.text
+	#content = event.message.text
+	content = str(curr.get_currency_data())
 	line_bot_api.reply_message(event.reply_token, TextSendMessage(text=content))
 
 if __name__ == "__main__":
