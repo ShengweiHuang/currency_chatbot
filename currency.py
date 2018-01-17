@@ -13,7 +13,6 @@ def get_currency_data():
 		for row in spamreader:
 			return_list.append(row)
 	os.remove(CURRENCY_FILE_NAME)
-	print(return_list)
 	return return_list
 
 if __name__ == "__main__":

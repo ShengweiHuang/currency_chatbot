@@ -28,7 +28,7 @@ def callback():
 def handle_message(event):
 	print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
 	#content = event.message.text
-	content = str(curr.get_currency_data())
+	content = curr.get_currency_data()[1][1]
 	line_bot_api.reply_message(event.reply_token, TextSendMessage(text=content))
 
 if __name__ == "__main__":
