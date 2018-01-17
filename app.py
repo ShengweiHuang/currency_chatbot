@@ -13,17 +13,14 @@ handler = WebhookHandler(os.environ['LINEBOT_CHANNEL_SECRET'])
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
-
     # get request body as text
     body = request.get_data(as_text=True)
     print("Request body: " + body, "Signature: " + signature)
-
     # handle webhook body
     try:
-        handler.handle(body, signature)
+        handler.handle(signature)
     except InvalidSignatureError:
         abort(400)
-
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage)
