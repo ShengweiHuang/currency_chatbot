@@ -27,9 +27,7 @@ def callback():
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
     content = "{}: {}".format(event.source.user_id, event.message.text)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
+    line_bot_api.reply_message(TextSendMessage(text=content))
 
 if __name__ == "__main__":
     app.run(host=os.getenv('IP','0.0.0.0'), port=int(os.getenv('PORT','8080')))
