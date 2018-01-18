@@ -8,3 +8,5 @@ LINEBOT_CHANNEL_ACCESS_TOKEN
 LINEBOT_CHANNEL_SECRET
 ```
 裡面存放Line開發者介面提供的```CHANNEL_ACCESS_TOKEN```與```SECRET```，完成以後基本上就可以運行了。
+## 執行結果
+<img src="https://i.imgur.com/YCeHOFC.jpg" width="350"/>
