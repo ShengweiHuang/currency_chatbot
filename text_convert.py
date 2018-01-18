@@ -53,9 +53,9 @@ def get_quantity(input_list):
 def get_buy_or_sell(input_list):
 	# buy -> 0, sell -> 1, none of all -> -1
 	for i in input_list:
-		if "買" in i:
-			return 0
 		if "賣" in i:
+			return 0
+		if "買" in i:
 			return 1
 	return -1
 
