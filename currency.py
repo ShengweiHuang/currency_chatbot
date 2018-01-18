@@ -19,7 +19,7 @@ def convert_to_TWD(currency_id, quantity, trading_type = -1, currency_data = get
 	# buying cash, buying spot, selling cash, selling spot
 	data_row = currency_data[currency_id]
 	return_data = [float(data_row[2]), float(data_row[3]), float(data_row[12]),float(data_row[13])]
-	return_data = [i * quantity for i in return_data]
+	return_data = [round(i * quantity, 4) for i in return_data]
 	if trading_type == -1:
 		return return_data
 	else:
